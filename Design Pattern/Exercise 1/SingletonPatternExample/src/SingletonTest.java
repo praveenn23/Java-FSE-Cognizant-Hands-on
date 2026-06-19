@@ -1,7 +1,7 @@
 public class SingletonTest {
 
     static void basicTest() {
-        System.out.println("=== Basic Singleton Test ===");
+        System.out.println(" Basic Singleton Test ");
 
         Logger logger1 = Logger.getInstance();
         Logger logger2 = Logger.getInstance();
@@ -21,7 +21,7 @@ public class SingletonTest {
     }
 
     static void threadSafetyTest() throws InterruptedException {
-        System.out.println("=== Thread-Safety Test ===");
+        System.out.println(" Thread-Safety Test ");
 
         final int THREAD_COUNT = 5;
         Thread[] threads = new Thread[THREAD_COUNT];
@@ -53,6 +53,6 @@ public class SingletonTest {
     public static void main(String[] args) throws InterruptedException {
         basicTest();
         threadSafetyTest();
-        System.out.println("=== All Tests Passed ===");
+        System.out.println(" All Tests Passed ");
     }
 }

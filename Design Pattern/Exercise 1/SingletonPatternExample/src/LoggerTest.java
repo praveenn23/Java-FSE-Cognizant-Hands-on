@@ -2,11 +2,11 @@ public class LoggerTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("========================================");
+        
         System.out.println("  Singleton Pattern - Logger Test Suite ");
-        System.out.println("========================================\n");
+        
 
-        System.out.println("--- Test 1: Reference Equality ---");
+        System.out.println(" Test 1: Reference Equality ");
         Logger loggerA = Logger.getInstance();
         Logger loggerB = Logger.getInstance();
         Logger loggerC = Logger.getInstance();
@@ -18,14 +18,14 @@ public class LoggerTest {
         System.out.println("All references point to the same object: " + allSame);
         System.out.println(allSame ? "PASS\n" : "FAIL\n");
 
-        System.out.println("--- Test 2: Shared State ---");
+        System.out.println(" Test 2: Shared State ");
         loggerA.setLogLevel("DEBUG");
         System.out.println("Set logLevel via loggerA -> 'DEBUG'");
         System.out.println("logLevel read via loggerB -> '" + loggerB.getLogLevel() + "'");
         boolean stateShared = "DEBUG".equals(loggerB.getLogLevel());
         System.out.println(stateShared ? "PASS\n" : "FAIL\n");
 
-        System.out.println("--- Test 3: Logging Methods ---");
+        System.out.println(" Test 3: Logging Methods ");
         Logger logger = Logger.getInstance();
         logger.setLogLevel("INFO");
         logger.log("Application has started successfully.");
@@ -33,7 +33,7 @@ public class LoggerTest {
         logger.error("Unable to connect to database.");
         System.out.println("PASS\n");
 
-        System.out.println("--- Test 4: Thread-Safety (10 threads) ---");
+        System.out.println(" Test 4: Thread-Safety (10 threads) ");
         final int THREAD_COUNT = 10;
         final int[] instanceHashCodes = new int[THREAD_COUNT];
 
@@ -59,8 +59,8 @@ public class LoggerTest {
         System.out.println("All threads returned the same instance: " + threadSafe);
         System.out.println(threadSafe ? "PASS\n" : "FAIL\n");
 
-        System.out.println("========================================");
+        
         System.out.println("  All tests completed.");
-        System.out.println("========================================");
+        
     }
 }
