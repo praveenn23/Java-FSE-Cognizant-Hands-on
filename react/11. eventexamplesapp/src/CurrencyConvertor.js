@@ -36,7 +36,7 @@ class CurrencyConvertor extends Component {
                         readOnly
                     />
                     <br /><br />
-                    <button type="submit" style={{marginLeft:'12%'}}>Submit</button>
+                    <button type="submit" style={{marginLeft:'5%'}}>Submit</button>
                 </form>
             </div>
         );
