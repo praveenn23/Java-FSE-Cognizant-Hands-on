@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloService" class="com.example.service.HelloService" scope="singleton">
+        <property name="message" value="Hello from Spring XML Configuration!"/>
+        <property name="version" value="1.0"/>
+    </bean>
+
+    <bean id="greetingService" class="com.example.service.GreetingService" scope="prototype">
+        <constructor-arg name="greeting" value="Welcome to Spring Boot!"/>
+        <constructor-arg name="language" value="English"/>
+    </bean>
+
+    <bean id="notificationService" class="com.example.service.NotificationService">
+        <property name="helloService" ref="helloService"/>
+        <property name="notificationType" value="EMAIL"/>
+    </bean>
+
+</beans>

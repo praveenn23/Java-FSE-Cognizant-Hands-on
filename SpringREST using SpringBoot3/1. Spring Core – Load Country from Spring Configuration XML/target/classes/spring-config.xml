@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="india" class="com.example.model.Country" scope="singleton">
+        <property name="name" value="India"/>
+        <property name="capital" value="New Delhi"/>
+        <property name="population" value="1400000000"/>
+    </bean>
+
+    <bean id="usa" class="com.example.model.Country" scope="prototype">
+        <constructor-arg name="name" value="United States"/>
+        <constructor-arg name="capital" value="Washington D.C."/>
+        <constructor-arg name="population" value="331000000"/>
+    </bean>
+
+</beans>
